@@ -1,14 +1,48 @@
 # Docker nginx boilerplate
-###### A simple static website boilerplate
+###### A simple static website boilerplate based on docker and nginx
 
 ## Installation
+
+To run the app, you need to have docker, docker-compose and dnsmasq installed.
+
+### Docker engine
+
+1. Remove docker older version
+`sudo apt-get remove docker docker-engine docker.io`
+1. As always, apt update before anything ...
+`sudo apt-get update -y`
+1. allow Docker to use the aufs storage drivers.
+`sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual`
+1. Install packages to allow apt to use a repository over HTTPS
+`sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common`
+1. Add GPG key
+`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+1. Add repository
+`sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`
+1. update apt list
+`sudo apt-get update -y`
+1. install docker latest version
+`sudo apt-get install -y docker-ce`
+
+### Docker compose
+
+1. download docker compose in /usr/local/bin/docker-compose
+`sudo curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-\`uname -s\`-\`uname -m\` -o /usr/local/bin/docker-compose`
+1. make docker-compose executable
+`sudo chmod +x /usr/local/bin/docker-compose`
+1. Installing command completion
+`sudo curl -L https://raw.githubusercontent.com/docker/compose/1.17.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose`
+1. Optional, add current user to docker group
+`sudo usermod -a -G docker $USER`
+
+### dnsmasq
 
 In order to redirect `.dev` tld to localhost, you need dnsmasq. To install it, do the following on ubuntu :
 
 1. edit `/etc/NetworkManager/NetworkManager.conf` and replace `dns=dnsmasq` by `#dns=dnsmasq`
 1. run `sudo apt-get install dnsmasq`
 1. edit `/etc/dnsmasq.conf` and add those lines to the file :
-```conf
+```sh
   listen-address=127.0.0.1
   bind-interfaces
   address=/dev/127.0.0.1
