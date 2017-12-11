@@ -27,7 +27,7 @@ To run the app, you need to have docker, docker-compose and dnsmasq installed.
 ### Docker compose
 
 1. download docker compose in /usr/local/bin/docker-compose
-`sudo curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-\`uname -s\`-\`uname -m\` -o /usr/local/bin/docker-compose`
+`sudo curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-``uname -s``-``uname -m`` -o /usr/local/bin/docker-compose`
 1. make docker-compose executable
 `sudo chmod +x /usr/local/bin/docker-compose`
 1. Installing command completion
