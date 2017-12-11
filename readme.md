@@ -23,6 +23,7 @@ To run the app, you need to have docker, docker-compose and dnsmasq installed.
 `sudo apt-get update -y`
 1. install docker latest version
 `sudo apt-get install -y docker-ce`
+
 source : https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#uninstall-old-versions
 
 ### Docker compose
@@ -37,6 +38,7 @@ source : https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#uni
 `sudo curl -L https://raw.githubusercontent.com/docker/compose/1.17.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose`
 1. Optional, add current user to docker group
 `sudo usermod -a -G docker $USER`
+
 source : https://docs.docker.com/compose/install/
 
 ### dnsmasq
@@ -56,4 +58,5 @@ In order to redirect `.dev` tld to localhost, you need dnsmasq. To install it, d
 1. run `sudo systemctl restart dnsmasq.service`, this will restart the dnsmasq service.
 1. edit `/etc/dhcp/dhclient.conf` and uncomment (remove the `#`) on this line : `prepend domain-name-servers 127.0.0.1;`
 1. run `sudo systemctl restart NetworkManager.service` to restart the network manager, you will temporarily lost your network connection.
+
 source : https://www.leaseweb.com/labs/2013/08/wildcard-dns-ubuntu-hosts-file-using-dnsmasq/
