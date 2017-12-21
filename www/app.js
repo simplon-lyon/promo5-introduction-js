@@ -49,3 +49,23 @@ function fibonacci(toto = 0) {
 }
 
 console.log(fibonacci(50));
+
+// 5) Faire deviner un nombre donné avec des prompt dans lequel l'utilisateur doit entrer le nombre qu'il suppose, et selon la supposition de l'utilisateur, lui ré-afficher un prompt avec "c'est plus" ou "c'est moins" ou alors lui afficher une alert "bravo" s'il tombe juste
+
+const number = 451;
+let guessedNumber = prompt("Entrez un nombre");
+
+while (true) {
+
+  if (guessedNumber < number) {
+    guessedNumber = prompt("C'est plus !");
+  } else if (guessedNumber > number) {
+    guessedNumber = prompt("C'est moins !");
+  } else if (guessedNumber == number) {
+    alert("Bravo !");
+    break;
+  } else {
+    guessedNumber = prompt("Veuillez rentrer un nombre !");
+  }
+  
+}
