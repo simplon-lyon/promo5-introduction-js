@@ -8,11 +8,11 @@
     <title>Document</title>
 </head>
 <script>
-    //Solution pour la version avec nombre de ligne variable
-
+    //Solution du sapin 
+function pyramide() {
     //On crée une variable contenant le nombre de ligne qu'on voudra
     //(ce nombre peut être obtenu avec un prompt ou autre)
-    let nbLignes = 40;
+    let nbLignes = 5;
     //On calcul le nombre de colonnes qu'on aura en fonction du nombre
     //de lignes
     let nbColonnes = nbLignes * 2 - 1;
@@ -43,6 +43,15 @@
         //On affiche la variable texte en console
         console.log(texte);
     }
+}
+
+function sapin(nbEtage) {
+    for(let etage = 0; etage <  nbEtage; etage++) {
+        pyramide(5);
+    }
+}
+
+sapin(3);
 </script>
 
 <body>
