@@ -43,6 +43,24 @@
         //On affiche la variable texte en console
         console.log(texte);
     }
+    
+    // BONUS version avec un for et une variable :
+    
+    // Création d'une variable contenant la taille de notre pyramide.
+    let width = 10;
+    
+    // La première ligne comporte une étoile, on ajoute ensuite deux étoiles par ligne.
+    // La boucle s'arrête lorsque le nombre d'étoiles est égal à la taille de notre pyramide.
+    for (let stars = 1; stars <= width; stars += 2) {
+        // Le nombre d'espaces total correspond à la largeur de notre pyramide moins le nombre d'étoile.
+        // Le nombre d'espace de chaque coté des étoiles correspond au nombre total divisé par deux.
+        //
+        // la fonction repeat d'une string permet de répéter son contenu autant de fois qu'on le souhaite :
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+        //
+        // On peut mettre bout à bout (concaténer) deux string grâce à l'opérateur '+'
+        console.log(" ".repeat((width - stars)/2) + "*".repeat(stars) + " ".repeat((width - stars)/2));
+    }
 </script>
 
 <body>
