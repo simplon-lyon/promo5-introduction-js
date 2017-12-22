@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+
+    //On commence par créer une variable avec le nombre d'espace
+    //initial qu'il y aura devant chaque étoile
+    let espace = 5;
+    //On peut aussi gérer les étoiles
+    //let etoiles = 1
+    //On fait une boucle de 5 tour, un tour par ligne
+    for(let ligne = 1; ligne <= 5; ligne++) {
+        //On initialise la variable texte avec
+        //rien dedans. C'est ce texte qu'on affichera.
+        let texte = '';
+        //On fait une première boucle imbriquée qui
+        //viendra ajouter des espaces à notre texte
+        for(let x = 1; x <= espace; x++) {
+            //A chaque tour de boucle, on ajoute un espace
+            //à la variable texte
+            texte += ' ';
+        }
+        //Une fois la première boucle imbriquée terminée,
+        //on en fait une seconde qui viendra ajouter
+        //les étoiles à notre texte
+        for (let etoile = 1; etoile <= ligne*2-1; etoile++) {
+            //A chaque tour de boucle, on ajoute une
+            //étoile à la variable texte
+            texte += '*';            
+        }
+        //On affiche la variable texte en console
+        console.log(texte);
+        //On retire un espace pour la prochaine ligne
+        espace--;
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>
