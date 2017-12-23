@@ -9,6 +9,13 @@
 </head>
 <script>
     //Solution du sapin 
+
+    /*
+    On englobe toute la création de la pyramide 
+    d'étoile dans une fonction, afin de pouvoir
+    s'en resservir plusieurs fois sans avoir à 
+    retaper le code à chaque fois
+    */
 function pyramide() {
     //On crée une variable contenant le nombre de ligne qu'on voudra
     //(ce nombre peut être obtenu avec un prompt ou autre)
@@ -44,13 +51,23 @@ function pyramide() {
         console.log(texte);
     }
 }
-
+/*
+On crée une fonction sapin qui attend en argument
+le nombre d'étage qu'on veut pour notre sapin
+(en fait le nombre de pyramides qui seront créées)
+*/
 function sapin(nbEtage) {
+    //On fait une boucle pour le nombre d'étage donné
     for(let etage = 0; etage <  nbEtage; etage++) {
+        //A chaque tour, on appel la fonction pyramide
+        //en lui disant de généré une pyramide de 5
+        //étage d'étoiles
         pyramide(5);
+
     }
 }
-
+//On appelle notre fonction sapin en lui disant 
+//qu'on veut un sapin constitué de 3 pyramides
 sapin(3);
 </script>
 
