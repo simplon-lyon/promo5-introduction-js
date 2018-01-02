@@ -1,3 +1,5 @@
+
+
 //On crée une variable voiture qui contiendra notre tableau
 // let voiture =[];
 // //On fait une boucle qui fera 3 tours pour récupérer 3 valeur de l'utilisateur
@@ -51,6 +53,7 @@
 // console.log(voiture.length);
 
 
+
 let check = true, ask = '', arr = [];
 
 while (check) {
@@ -58,47 +61,71 @@ while (check) {
 
     switch (ask) {
         case 'start':
-            for (let x = 0; x < 3; x++) {
-                let valeur = prompt("entrer nom de voiture");
-
-                arr.push(valeur);
-
-            }
+            start();
             break;
         case 'show':
-            for (let nom of arr) {
-                console.log(nom);
-            }
+            show();
             break;
         case 'length':
-            console.log(arr.length);
+            length();
             break;
         case 'reset':
-            arr = [];
+            reset();
             break;
         case 'stop':
             check = false;
             break;
         default:
-            console.log('unknown command');
+            unknown();
             break;
     }
 
 }
 
 //autre manière avec des if et else-if
-while(true) {
+while (true) {
     let reponse = prompt('enter command');
 
-    if(reponse === 'start') {
-
-    } else if(reponse === 'show') {
-
-    } else if(reponse === 'length') {
-
-    } else if(reponse === 'stop') {
+    if (reponse === 'start') {
+        start();
+    } else if (reponse === 'show') {
+        show();
+    } else if (reponse === 'length') {
+        length();
+    } else if (reponse === 'stop') {
         break;
     } else {
-        console.log('unknown command');
+        unknown();
     }
 }
+
+
+
+function unknown() {
+    console.log('unknown command');
+}
+
+function reset() {
+    arr = [];
+}
+
+function length() {
+    console.log(arr.length);
+}
+
+function show() {
+    for (let nom of arr) {
+        console.log(nom);
+    }
+}
+
+function start() {
+
+    for (let x = 0; x < 3; x++) {
+        let valeur = prompt("entrer nom de voiture");
+
+        arr.push(valeur);
+
+    }
+}
+
